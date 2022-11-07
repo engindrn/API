@@ -54,9 +54,10 @@ public class Get06b extends ReqresBaseUrl {
 
        // 3)Print all ids greater than 3 on the console
         jsonPath.getList("data.id");                               //bu tum id leri verir
+
         System.out.println(jsonPath.getList("data.id"));
 
-         List<Integer>ids=jsonPath.getList("data.findAll{it.id>3}.id");   //grovy language ile listteki istedigimiz filtrelemeleri yaptik
+         List<Integer>ids=jsonPath.getList("data.findAll{it.id>3}.id");   //groovy language ile listteki istedigimiz filtrelemeleri yaptik
         System.out.println(ids);                             //istedigimizi sona yazdik .id
 
         // Assert that there are 3 ids greater than 3

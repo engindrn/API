@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class GoRestTestData {
 
-    public Map<String,String> dataKeyMap(String name,String email,String gender, String status){
+    public Map<String,String> dataKeyMap (String name,String email,String gender, String status){
+
         Map<String,String > dataKeyMap = new HashMap<>();
         dataKeyMap.put("name",name);
         dataKeyMap.put("email",email);
@@ -28,7 +29,7 @@ public class GoRestTestData {
 
 
 /*{
-    "meta": null,
+    "meta": null, //sadece null için string olurdu. Ancak içteki map'tten dolayı null ve map değerlerini ancak object içinde saklayabiliriz.
     "data": {
         "id": 2986,
         "name": "Navin Talwar",
@@ -40,4 +41,3 @@ public class GoRestTestData {
 
 
 
-//sadece null için string olurdu. Ancak içteki map'tten dolayı null ve map değerlerini ancak object içinde saklayabiliriz.

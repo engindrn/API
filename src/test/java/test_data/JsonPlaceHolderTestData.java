@@ -9,12 +9,39 @@ public class JsonPlaceHolderTestData {
 
 
         Map<String,Object> expectedDataMap = new HashMap<>();
-        expectedDataMap.put("userId",userId);
-        expectedDataMap.put("title",title);
-        expectedDataMap.put("completed",completed);
+
+        if(userId!=null){
+            expectedDataMap.put("userId",userId);
+        }
+        if(title!=null){
+            expectedDataMap.put("title",title);
+        }
+
+        if(completed!=null){
+            expectedDataMap.put("completed",completed);
+        }
 
         return expectedDataMap;
     }
 
+    public String expectedDataInString(int userId,String title,boolean completed){
+
+        String expectedData = "{\n" +
+                "                       \"userId\": "+userId+",\n" +
+                "                       \"title\": \""+title+"\",\n" +
+                "                       \"completed\": "+completed+",\n" +
+                "                       \"id\": 201\n" +
+                "                       }";
+       return expectedData;
+    }
+
+  // {
+  //     "userId": 55,
+  //         "title": "Tidy your room",
+  //         "completed": false
+  // }
+
 
 }
+//null degerleri kabul etmesi icin datalar wrapper classdan yaptik
+//patch ıcın  farkli bir methoddda olabilir yani degimesi istenilen datalarla
