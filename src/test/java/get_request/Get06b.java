@@ -41,6 +41,7 @@ public class Get06b extends ReqresBaseUrl {
 
         //1)Status code is 200
         assertEquals(200,response.getStatusCode());
+    //    response.then().statusCode(200);
 
         //2)Print all pantone_values
         JsonPath jsonPath=response.jsonPath();   //response u jsonpath e dönusturuyoruz boylece datalar jsonPath e geciyor
@@ -55,13 +56,13 @@ public class Get06b extends ReqresBaseUrl {
        // 3)Print all ids greater than 3 on the console
         jsonPath.getList("data.id");                               //bu tum id leri verir
 
-        System.out.println(jsonPath.getList("data.id"));
+        System.out.println(jsonPath.getList("data.id"));    //souta koyduk
 
          List<Integer>ids=jsonPath.getList("data.findAll{it.id>3}.id");   //groovy language ile listteki istedigimiz filtrelemeleri yaptik
         System.out.println(ids);                             //istedigimizi sona yazdik .id
 
         // Assert that there are 3 ids greater than 3
-        assertEquals(3,ids.size());
+        assertEquals(3,ids.size());             //oncesinde liste attigimiz id lerin size ini aldik
 
        //4)Print all names whose ids are less than 3 on the console
         List<String>names=jsonPath.getList("data.findAll{it.id<3}.name");   //id leri 3 den kücük olanları namelerini aldık

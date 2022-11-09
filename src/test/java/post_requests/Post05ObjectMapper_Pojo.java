@@ -46,7 +46,7 @@ public class Post05ObjectMapper_Pojo extends JsonPlaceHolderBaseUrl {
 
         //Do Assertion
         JsonPlaceHolderPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(),JsonPlaceHolderPojo.class);
-        System.out.println("actualData = " + actualData);
+        System.out.println("actualData = " + actualData);                     //response string olrak alip kalip olan pojo classa ceviriyor
 
         assertEquals(201,response.getStatusCode());
         assertEquals(expectedData.getUserId(),actualData.getUserId());

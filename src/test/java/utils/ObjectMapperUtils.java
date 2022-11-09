@@ -15,7 +15,7 @@ public class ObjectMapperUtils {
     }
 
     public static <T> T convertJsonToJava(String json, Class<T> cls){//Generic Method
-
+                                                                     //static yaptik obje olusturmadan class adiyla cagiracaz
         T javaResult = null;
 
         try {
@@ -26,8 +26,4 @@ public class ObjectMapperUtils {
 
         return javaResult;
     }
-
-
-
-
 }

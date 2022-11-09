@@ -2,7 +2,10 @@ package pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)       //post isleminde girmedigimiz id olmadigi icin devreye girdi
+@JsonIgnoreProperties(ignoreUnknown = true)       //bu anatation ile json datayi pojo class a cevirirken pojo
+                                                 // class ta ayni seviyedeki karsiligi olmayan json veri isleme alinmaz
+
+
 public class JsonPlaceHolderPojo {
 
     private Integer userId;
@@ -52,7 +55,7 @@ public class JsonPlaceHolderPojo {
     }
 
     // {
-   //     "userId": 55,                                   //post islemi oldugu inic id verilmez sistem veriir
+   //          "userId": 55,                                   //post islemi oldugu inic id verilmez sistem veriir
    //         "title": "Tidy your room",
    //         "completed": false
    // }

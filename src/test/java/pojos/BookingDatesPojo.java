@@ -2,7 +2,8 @@ package pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true)//bu anatation ile json datayi pojo class a cevirirken pojo
+                                          // class ta ayni seviyedeki karsiligi olmayan json veri isleme alinmaz
 
 public class BookingDatesPojo {
 

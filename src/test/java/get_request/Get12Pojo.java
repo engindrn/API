@@ -47,8 +47,8 @@ public class Get12Pojo extends RestfulBaseUrl {
         response.prettyPrint();
 
         //Do Assertion
-        BookingPojo actualData = response.as(BookingPojo.class);  //
-        System.out.println("actualData = " + actualData);
+        BookingPojo actualData = response.as(BookingPojo.class);  //tum verileri barindiran outer pojo class data tipi olur
+        System.out.println("actualData = " + actualData);       //json data artik bu data typina doner
 
         assertEquals(expectedData.getFirstname(),actualData.getFirstname());
         assertEquals(expectedData.getLastname(),actualData.getLastname());

@@ -21,6 +21,7 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
            }
     When
       I send PATCH Request to the Url
+
     Then
       Status code is 200
       And response body is like   {

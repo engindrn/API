@@ -61,5 +61,5 @@ public class Get13Pojo extends GoRestBaseUrl {
 
 
     }
-    //data bolumundeki bilgileri expectedData dan almak yerine goRestDataPojo dan aldik ulasmasi daha kolay
+    //data bolumundeki bilgileri expectedData dan almak yerine goRestDataPojo (inner pojo) dan aldik ulasmasi daha kolay
 }

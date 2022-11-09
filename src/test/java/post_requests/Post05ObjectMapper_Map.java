@@ -44,6 +44,7 @@ public class Post05ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
         spec.pathParam("first","todos");
 
         //Set the Expected Data
+
     //   String jsonInString = "{\n" +
     //           "                                    \"userId\": 55,\n" +
     //           "                                    \"title\": \"Tidy your room\",\n" +
@@ -54,15 +55,15 @@ public class Post05ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
         JsonPlaceHolderTestData obj=new JsonPlaceHolderTestData();
        String jsonInString= obj.expectedDataInString(55,"Tidy your room",false); //bu bize string bir data donecek
 
-        HashMap expectedData =   new ObjectMapper().readValue(jsonInString, HashMap.class);
-        System.out.println("expectedData = " + expectedData);
+        HashMap expectedData =   new ObjectMapper().readValue(jsonInString, HashMap.class); //strıng datayi istedigimiz fortmata cevirir readValue()
+        System.out.println("expectedData = " + expectedData);                            //her defa excption olasin ve goruntu olarak burda olmasin diye utils da bir method ile yapacaz
 
         //Send the Request and Get the Response
         Response response= given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
         //do assertion
-        HashMap actualData= new ObjectMapper().readValue(response.asString(), HashMap.class);
+        HashMap actualData= new ObjectMapper().readValue(response.asString(), HashMap.class); //objeMapper olusturup response string olarak alip map e attik
         System.out.println("actualData = " + actualData);
 
         assertEquals(201,response.statusCode());

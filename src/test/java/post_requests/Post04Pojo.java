@@ -62,7 +62,7 @@ public class Post04Pojo extends RestfulBaseUrl {
         response.prettyPrint();
 
         //do assertion
-        BookingResponseBodyPojo actualData=  response.as(BookingResponseBodyPojo.class);
+        BookingResponseBodyPojo actualData=  response.as(BookingResponseBodyPojo.class); //farkli seviyede old icin butun datalari iceren bir pojo olusturduk
         System.out.println("actualData = " + actualData);
 
         assertEquals(200,response.statusCode());

@@ -39,7 +39,7 @@ public class Get10 extends GoRestBaseUrl {
     public void get10() {
         spec.pathParams("first", "users", "second", 2986);
 
-        GoRestTestData obj = new GoRestTestData();  //test data package deki classimizdan objemizi olusturduk
+        GoRestTestData obj = new GoRestTestData();  //test data package deki classimizdan objemizi olusturduk. obj ile methoda ulastik parametreleri gonderdik
         Map<String, String> dataKeyMap = obj.dataKeyMap("Bhaumik Jha", "jha_bhaumik@schinner-moore.info", "male", "inactive");
         Map<String, Object> expectedData = obj.expectedDataMethod(null, dataKeyMap);
         System.out.println(expectedData);
