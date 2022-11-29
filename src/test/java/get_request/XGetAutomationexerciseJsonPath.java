@@ -2,6 +2,7 @@ package get_request;
 
 import base_url.AutomationExercieseBaseUrl;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -35,8 +36,8 @@ public class XGetAutomationexerciseJsonPath extends AutomationExercieseBaseUrl {
         //set the expected data
 
         //send the request get the response
-        Response response = given().spec(spec).when().get("/{first}");
-        response.prettyPrint();
+        Response response = given().spec(spec).when().get("/{first}"); //html dondugu icin prety print yapinca
+                                                                         //hata veriyor
 
         //do assertion
         //assertEquals(200,response.getStatusCode());
@@ -46,6 +47,20 @@ public class XGetAutomationexerciseJsonPath extends AutomationExercieseBaseUrl {
 
 
         //1.yol
+        JsonPath jsonPath=response.jsonPath();
+        List<String> HM=response.htmlPath().getList("brands.findAll{it.brand=='H&M'}.id");
+        System.out.println("HM = " + HM);
+
+        List <String> Polo=response.htmlPath().getList("brands.findAll{it.brand=='Polo'}");
+        System.out.println("Polo = " + Polo);
+
+        assertEquals(HM.size(),Polo.size());
+
+
+
+
+
+        //2.yol
         List<String> brandlist = response.htmlPath().getList("brands.brand");
         int numOfHM = 0;
         int numOfPolo = 0;
@@ -59,16 +74,9 @@ public class XGetAutomationexerciseJsonPath extends AutomationExercieseBaseUrl {
                 assertEquals(numOfHM, numOfPolo);
 
 
-                ////JsonPath jsonPath=response.jsonPath();
-                //List<String> HM=response.htmlPath().getList("brands.findAll{it.brand=='H&M'}.id");
-                //System.out.println("HM = " + HM);
 
-                //List <String> Polo=response.htmlPath().getList("brands.findAll{it.brand=='Polo'}");
-                //System.out.println("Polo = " + Polo);
 
-                //assertEquals(HM.size(),Polo.size());
-
-                //2.yol
+                //3.yol
                 long hmCount = response.htmlPath().getList("brands.brand").stream().filter(t -> t.toString().equals("H&M")).count();
                 long poloCount=response.htmlPath().getList("brands.brand").stream().filter(t -> t.toString().equals("Polo")).count();
                 assertEquals(hmCount,poloCount);

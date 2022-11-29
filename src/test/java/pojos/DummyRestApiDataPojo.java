@@ -3,7 +3,16 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)//bu anatation ile json datayi pojo class a cevirirken pojo
-// class ta ayni seviyedeki karsiligi olmayan json veri isleme alinmaz
+                                          // class ta ayni seviyedeki karsiligi olmayan json veri isleme alinmaz
+
+   /*     "employee_name": "Tom Hanks",
+            "employee_salary": 111111,
+            "employee_age": 23,
+            "profile_image": "Perfect image",
+            "id": 4891                                   //postta id yi girmeye gerek yok sistem veriyor
+            */
+
+
 
 public class DummyRestApiDataPojo {
     private String employee_name;
@@ -60,7 +69,3 @@ public class DummyRestApiDataPojo {
 }
 
 
-      /*     "employee_name": "Tom Hanks",
-            "employee_salary": 111111,
-            "employee_age": 23,
-            "profile_image": "Perfect image",*/

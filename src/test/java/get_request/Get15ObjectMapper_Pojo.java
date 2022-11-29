@@ -44,7 +44,7 @@ public class Get15ObjectMapper_Pojo extends RestfulBaseUrl {
         
         //send the request get the response
        Response response= given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
+         response.prettyPrint();
 
         //Do Assertion
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);

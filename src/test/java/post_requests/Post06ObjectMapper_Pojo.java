@@ -25,7 +25,7 @@ public class Post06ObjectMapper_Pojo extends DummyRestApiBaseUrl {
                        "id": 4891
                     }
 
-      Test Case: Type by using Gherkin Language
+      Test Case: Type by using Gherkin Language  //gherkin language kullanarak test case i yaziniz
       Assert:
 
                i) Status code is 200

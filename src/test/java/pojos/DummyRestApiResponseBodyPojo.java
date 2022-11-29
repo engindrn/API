@@ -5,6 +5,19 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)//bu anatation ile json datayi pojo class a cevirirken pojo
                                             // class ta ayni seviyedeki karsiligi olmayan json veri isleme alinmaz
 
+
+/* {
+            "status": "success",
+            "data": {
+                "employee_name": "Tom Hanks",
+                "employee_salary": 111111,
+                "employee_age": 23,
+                "profile_image": "Perfect image",
+                "id": 4891
+            },
+            "message": "Successfully! Record has been added."
+        }*/
+
 public class DummyRestApiResponseBodyPojo {
 
     private String status;
@@ -49,14 +62,3 @@ public class DummyRestApiResponseBodyPojo {
     }
 }
 
-/* {
-            "status": "success",
-            "data": {
-                "employee_name": "Tom Hanks",
-                "employee_salary": 111111,
-                "employee_age": 23,
-                "profile_image": "Perfect image",
-                "id": 4891
-            },
-            "message": "Successfully! Record has been added."
-        }*/
